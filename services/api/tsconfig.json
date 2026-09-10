@@ -1,0 +1,12 @@
+{
+  // Shared strict/modern options live in the repo-root tsconfig.base.json.
+  // Only project-specific layout belongs here.
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "types": ["node"],
+    "tsBuildInfoFile": "./dist/.tsbuildinfo"
+  },
+  "include": ["src/**/*"]
+}
