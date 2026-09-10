@@ -1,0 +1,20 @@
+# Prettier also honours .gitignore; this file covers things that should be
+# skipped regardless of git state.
+
+# Build output
+**/dist/
+*.tsbuildinfo
+coverage/
+
+# Dependencies
+**/node_modules/
+
+# Lockfiles
+package-lock.json
+
+# Generated / vendored data — never hand-formatted
+synthetic-data/.output/
+synthetic-data/fixtures/
+
+# Scratch
+.notes/

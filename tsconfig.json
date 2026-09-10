@@ -1,0 +1,10 @@
+{
+  // Root config for editor tooling and the browser-facing frontend workspaces.
+  // Backend packages/services have their own tsconfig.json that also extends
+  // tsconfig.base.json — see that file for the shared options.
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["es2023", "dom", "dom.iterable"],
+    "jsx": "react-jsx"
+  }
+}

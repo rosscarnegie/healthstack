@@ -1,0 +1,18 @@
+.env
+.env.*
+!.env.example
+.notes/*
+
+output/
+.output/
+
+# dependencies
+node_modules/
+
+# build output
+dist/
+*.tsbuildinfo
+
+# logs
+*.log
+npm-debug.log*

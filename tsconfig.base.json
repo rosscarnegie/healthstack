@@ -1,0 +1,41 @@
+{
+  // Shared compiler options for every package and service in this repo.
+  // Individual tsconfig.json files should `extends` this and only set
+  // project-specific options (rootDir, outDir, lib/types, path includes).
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    // Module / target: modern Node ("nodenext" resolves package.json "exports",
+    // requires explicit .js specifiers on relative imports).
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "target": "es2023",
+    "lib": ["es2023"],
+    "types": [],
+
+    // Emit
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    // Interop
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+
+    // Strictness
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitReturns": true,
+    "noImplicitOverride": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedSideEffectImports": true,
+
+    "skipLibCheck": true
+  }
+}
