@@ -68,17 +68,17 @@ This repo works through those problems in code and writes down the reasoning.
 
 ## 🗺️ Repository map
 
-| Path | What it is |
-| ---- | ---------- |
-| 📦 [`packages/`](packages/) | Shared, versioned TypeScript packages consumed by services. |
-| &nbsp;&nbsp;📝 [`packages/logger/`](packages/logger/) | `@healthstack/logger` — structured, environment-aware logging (pino) with PHI/secret redaction. |
-| &nbsp;&nbsp;🔐 [`packages/audit/`](packages/audit/) | `@healthstack/audit` — tamper-evident, hash-chained healthcare audit trail (FHIR `AuditEvent` / IHE ATNA shaped). |
-| ⚙️ [`services/`](services/) | Backend services. `api` is the live Express service; the rest (`ingestion`, `transformation`, `terminology`, `orchestration`, …) are stubs that describe the intended decomposition. |
-| 🖥️ [`frontend/`](frontend/) | `web` and `mobile` clients (stubs). |
-| 🏗️ [`infrastructure/`](infrastructure/) | Infrastructure-as-code and per-component notes: database, cache, identity (Keycloak), secrets, networking, messaging, observability, object storage, deployment (Terraform / Docker / Kubernetes), and external-system connectors (EHR, HIE, payer, pharmacy, LIS, PACS). |
-| 🧪 [`synthetic-data/`](synthetic-data/) | Synthea-based synthetic FHIR data generation (Docker). |
-| 📚 [`documentation/`](documentation/) | The knowledge base — see below. |
-| 🧩 [`tsconfig.base.json`](tsconfig.base.json) | Single shared TypeScript configuration; every package and service extends it. |
+| Path                                                  | What it is                                                                                                                                                                                                                                                                |
+| ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 📦 [`packages/`](packages/)                           | Shared, versioned TypeScript packages consumed by services.                                                                                                                                                                                                               |
+| &nbsp;&nbsp;📝 [`packages/logger/`](packages/logger/) | `@healthstack/logger` — structured, environment-aware logging (pino) with PHI/secret redaction.                                                                                                                                                                           |
+| &nbsp;&nbsp;🔐 [`packages/audit/`](packages/audit/)   | `@healthstack/audit` — tamper-evident, hash-chained healthcare audit trail (FHIR `AuditEvent` / IHE ATNA shaped).                                                                                                                                                         |
+| ⚙️ [`services/`](services/)                           | Backend services. `api` is the live Express service; the rest (`ingestion`, `transformation`, `terminology`, `orchestration`, …) are stubs that describe the intended decomposition.                                                                                      |
+| 🖥️ [`frontend/`](frontend/)                           | `web` and `mobile` clients (stubs).                                                                                                                                                                                                                                       |
+| 🏗️ [`infrastructure/`](infrastructure/)               | Infrastructure-as-code and per-component notes: database, cache, identity (Keycloak), secrets, networking, messaging, observability, object storage, deployment (Terraform / Docker / Kubernetes), and external-system connectors (EHR, HIE, payer, pharmacy, LIS, PACS). |
+| 🧪 [`synthetic-data/`](synthetic-data/)               | Synthea-based synthetic FHIR data generation (Docker).                                                                                                                                                                                                                    |
+| 📚 [`documentation/`](documentation/)                 | The knowledge base — see below.                                                                                                                                                                                                                                           |
+| 🧩 [`tsconfig.base.json`](tsconfig.base.json)         | Single shared TypeScript configuration; every package and service extends it.                                                                                                                                                                                             |
 
 ---
 
