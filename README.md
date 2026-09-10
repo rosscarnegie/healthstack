@@ -1,6 +1,10 @@
-![Static Badge](https://img.shields.io/badge/project_status%3A-brainstorming-blue)
+![Project status](https://img.shields.io/badge/project_status%3A-brainstorming-blue)
+![Code license: MIT](https://img.shields.io/badge/code_license-MIT-green)
+![Docs license: CC BY 4.0](https://img.shields.io/badge/docs_license-CC_BY_4.0-lightgrey)
+![TypeScript](https://img.shields.io/badge/TypeScript-nodenext-3178c6?logo=typescript&logoColor=white)
+![Node](https://img.shields.io/badge/node-%E2%89%A5%2022-339933?logo=nodedotjs&logoColor=white)
 
-# HealthStack
+# 🩺 HealthStack
 
 **Working notes on building a production-grade healthcare data platform.**
 
@@ -41,7 +45,7 @@ For now, I'm treating HealthStack as a personal project and am not accepting con
 
 ---
 
-## Why this exists
+## 💡 Why this exists
 
 Most tutorials stop at "here is a CRUD API." The hard, interesting parts of
 healthcare software are everything _around_ the CRUD:
@@ -62,23 +66,23 @@ This repo works through those problems in code and writes down the reasoning.
 
 ---
 
-## Repository map
+## 🗺️ Repository map
 
-| Path                                               | What it is                                                                                                                                                                                                                                                                |
-| -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`packages/`](packages/)                           | Shared, versioned TypeScript packages consumed by services.                                                                                                                                                                                                               |
-| &nbsp;&nbsp;[`packages/logger/`](packages/logger/) | `@healthstack/logger` — structured, environment-aware logging (pino) with PHI/secret redaction.                                                                                                                                                                           |
-| &nbsp;&nbsp;[`packages/audit/`](packages/audit/)   | `@healthstack/audit` — tamper-evident, hash-chained healthcare audit trail (FHIR `AuditEvent` / IHE ATNA shaped).                                                                                                                                                         |
-| [`services/`](services/)                           | Backend services. `api` is the live Express service; the rest (`ingestion`, `transformation`, `terminology`, `orchestration`, …) are stubs that describe the intended decomposition.                                                                                      |
-| [`frontend/`](frontend/)                           | `web` and `mobile` clients (stubs).                                                                                                                                                                                                                                       |
-| [`infrastructure/`](infrastructure/)               | Infrastructure-as-code and per-component notes: database, cache, identity (Keycloak), secrets, networking, messaging, observability, object storage, deployment (Terraform / Docker / Kubernetes), and external-system connectors (EHR, HIE, payer, pharmacy, LIS, PACS). |
-| [`synthetic-data/`](synthetic-data/)               | Synthea-based synthetic FHIR data generation (Docker).                                                                                                                                                                                                                    |
-| [`documentation/`](documentation/)                 | The knowledge base — see below.                                                                                                                                                                                                                                           |
-| [`tsconfig.base.json`](tsconfig.base.json)         | Single shared TypeScript configuration; every package and service extends it.                                                                                                                                                                                             |
+| Path | What it is |
+| ---- | ---------- |
+| 📦 [`packages/`](packages/) | Shared, versioned TypeScript packages consumed by services. |
+| &nbsp;&nbsp;📝 [`packages/logger/`](packages/logger/) | `@healthstack/logger` — structured, environment-aware logging (pino) with PHI/secret redaction. |
+| &nbsp;&nbsp;🔐 [`packages/audit/`](packages/audit/) | `@healthstack/audit` — tamper-evident, hash-chained healthcare audit trail (FHIR `AuditEvent` / IHE ATNA shaped). |
+| ⚙️ [`services/`](services/) | Backend services. `api` is the live Express service; the rest (`ingestion`, `transformation`, `terminology`, `orchestration`, …) are stubs that describe the intended decomposition. |
+| 🖥️ [`frontend/`](frontend/) | `web` and `mobile` clients (stubs). |
+| 🏗️ [`infrastructure/`](infrastructure/) | Infrastructure-as-code and per-component notes: database, cache, identity (Keycloak), secrets, networking, messaging, observability, object storage, deployment (Terraform / Docker / Kubernetes), and external-system connectors (EHR, HIE, payer, pharmacy, LIS, PACS). |
+| 🧪 [`synthetic-data/`](synthetic-data/) | Synthea-based synthetic FHIR data generation (Docker). |
+| 📚 [`documentation/`](documentation/) | The knowledge base — see below. |
+| 🧩 [`tsconfig.base.json`](tsconfig.base.json) | Single shared TypeScript configuration; every package and service extends it. |
 
 ---
 
-## Documentation
+## 📚 Documentation
 
 The knowledge base lives in [`documentation/`](documentation/). Start with
 [`documentation/README.md`](documentation/README.md) for the full index and the
@@ -98,22 +102,22 @@ citation convention.
 
 ---
 
-## Tech stack
+## 🧰 Tech stack
 
-- **Language / runtime:** TypeScript (nodenext, ES2023), Node.js ≥ 22
-- **Monorepo:** npm workspaces + a single `tsconfig.base.json` — see the package
+- 🟦 **Language / runtime:** TypeScript (nodenext, ES2023), Node.js ≥ 22
+- 🗂️ **Monorepo:** npm workspaces + a single `tsconfig.base.json` — see the package
   READMEs
-- **API:** Express 5, Zod for env/schema validation
-- **Logging:** pino via `@healthstack/logger`
-- **Audit:** `@healthstack/audit` (SHA-256 hash chain)
-- **Identity:** Keycloak (planned), SMART on FHIR / OAuth 2.0
-- **Data:** FHIR R4 as the canonical clinical model; OMOP CDM for analytics;
+- 🌐 **API:** Express 5, Zod for env/schema validation
+- 📝 **Logging:** pino via `@healthstack/logger`
+- 🔗 **Audit:** `@healthstack/audit` (SHA-256 hash chain)
+- 🔑 **Identity:** Keycloak (planned), SMART on FHIR / OAuth 2.0
+- 🏥 **Data:** FHIR R4 as the canonical clinical model; OMOP CDM for analytics;
   S3-compatible object storage for immutable raw payloads
-- **Synthetic data:** Synthea
+- 🧬 **Synthetic data:** Synthea
 
 ---
 
-## Getting started
+## 🚀 Getting started
 
 ```bash
 # install workspaces and build the shared packages
@@ -131,7 +135,7 @@ Per-package usage is documented in
 [`packages/logger/README.md`](packages/logger/README.md) and
 [`packages/audit/README.md`](packages/audit/README.md).
 
-### Development
+### 🛠️ Development
 
 ```bash
 npm run format       # Prettier — write
@@ -151,14 +155,14 @@ pull request.
 
 ---
 
-## Contributions
+## 🤝 Contributions
 
 This project is as much a personal knowledge base as it is a practical exercise. I’ve found that relying heavily on AI-assisted coding has dulled some of my core development skills, so I’m using this project to deliberately sharpen them through hands-on implementation and problem-solving.
 
 I may open the project to contributions once it reaches a more mature state and, of course, if others find it useful. For now, though, I’m keeping development solo and am not accepting contributions.
 ---
 
-## License
+## ⚖️ License
 
 - **Code** (everything under `packages/`, `services/`, `frontend/`,
   `infrastructure/`, `synthetic-data/`): [MIT](LICENSE).
