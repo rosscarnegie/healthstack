@@ -159,7 +159,7 @@ pull request.
 
 This project is as much a personal knowledge base as it is a practical exercise. I’ve found that relying heavily on AI-assisted coding has dulled some of my core development skills, so I’m using this project to deliberately sharpen them through hands-on implementation and problem-solving.
 
-I may open the project to contributions once it reaches a more mature state and, of course, if others find it useful. For now, though, I’m keeping development solo and am not accepting contributions.
+I may open the project to contributions once it reaches a more mature state and, of course, if others find it useful. For now, though, I’m keeping development solo and I'm not accepting contributions.
 ---
 
 ## ⚖️ License
