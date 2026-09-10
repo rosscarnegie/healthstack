@@ -1,0 +1,3 @@
+id,name,address,city,state,zip,lat,lon,phone,hasSpecialties,GENERAL PRACTICE,FAMILY PRACTICE,INTERNAL MEDICINE
+BRHA,Blue Ridge Health Alliance,100 Blue Ridge Way,Atlanta,GA,30303,33.7490,-84.3880,4045550101,true,1,2,2
+CVMG,Cedar Valley Medical Group,200 Cedar Valley Road,Atlanta,GA,30303,33.7500,-84.3870,4045550102,true,1,2,2
