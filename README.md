@@ -1,4 +1,4 @@
-![Project status](https://img.shields.io/badge/project_status%3A-brainstorming-blue)
+![Project stage](https://img.shields.io/badge/project_status-brainstorming-yellow)
 ![Code license: MIT](https://img.shields.io/badge/code_license-MIT-green)
 ![Docs license: CC BY 4.0](https://img.shields.io/badge/docs_license-CC_BY_4.0-lightgrey)
 ![TypeScript](https://img.shields.io/badge/TypeScript-nodenext-3178c6?logo=typescript&logoColor=white)
@@ -24,7 +24,7 @@ For now, I'm treating HealthStack as a personal project and am not accepting con
 
 ---
 
-## ⚠️ Read this first
+## ⚠️ Read This First
 
 - **This is a learning project, not a certified product.** Nothing here has been
   through a HIPAA risk assessment, an ONC certification, a HITRUST assessment, or
@@ -45,7 +45,7 @@ For now, I'm treating HealthStack as a personal project and am not accepting con
 
 ---
 
-## 💡 Why this exists
+## 💡 Why This Exists
 
 Most tutorials stop at "here is a CRUD API." The hard, interesting parts of
 healthcare software are everything _around_ the CRUD:
@@ -66,7 +66,7 @@ This repo works through those problems in code and writes down the reasoning.
 
 ---
 
-## 🗺️ Repository map
+## 🗺️ Repository Map
 
 | Path                                                  | What it is                                                                                                                                                                                                                                                                |
 | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -82,27 +82,37 @@ This repo works through those problems in code and writes down the reasoning.
 
 ---
 
+## What I'm Working On
+
+| Area                                                                                                                                                                   | Status                                                                 |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| [CI/CD, linting, and commit guards](.github/workflows) — Adding automated linting, formatting, and commit validation to catch issues before they reach the repository. | ![In progress](https://img.shields.io/badge/status-in_progress-yellow) |
+| [Data generation](synthetic-data) — generating initial FHIR data to support a multi-tenant environment with RBAC                                                       | ![In progress](https://img.shields.io/badge/status-in_progress-yellow) |
+| [FHIR → object store pipeline](documentation/data/raw-data-storage.md) — setting up a FHIR-to-object-store (e.g. S3 / GCP storage bucket) pipeline                     | ![In progress](https://img.shields.io/badge/status-in_progress-yellow) |
+
+---
+
 ## 📚 Documentation
 
 The knowledge base lives in [`documentation/`](documentation/). Start with
 [`documentation/README.md`](documentation/README.md) for the full index and the
 citation convention.
 
-| Area                                                                                                                                                    | Status  |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| [Regulatory landscape](documentation/compliance/regulatory-landscape.md) — HHS/OCR, ASTP/ONC, CMS, SAMHSA, NIST; the laws and rules that apply          | Drafted |
-| [HIPAA](documentation/compliance/hipaa.md) — Privacy, Security, Breach Notification, Enforcement; safeguards mapped to this codebase                    | Drafted |
-| [PHI handling & de-identification](documentation/compliance/phi-handling.md) — minimum necessary, Safe Harbor, Expert Determination, 42 CFR Part 2      | Drafted |
-| [Data retention](documentation/compliance/data-retention.md) — HIPAA documentation retention, CMS Conditions of Participation, state medical-record law | Drafted |
-| [Interoperability](documentation/architecture/interoperability.md) — Cures Act, information blocking, ONC certification, USCDI, CMS APIs                | Drafted |
-| [Audit logging](documentation/security/audit-logging.md) — § 164.312(b), ONC audit criteria, ASTM E2147, tamper-evidence                                | Drafted |
-| [Authentication & authorization](documentation/security/authentication-authorization.md) — SMART on FHIR, OAuth 2.0, RBAC/ABAC                          | Drafted |
-| [Secrets & encryption](documentation/security/secrets-encryption.md) — encryption at rest / in transit, key management                                  | Drafted |
-| Tenant isolation, security architecture, data architecture, OMOP CDM, lineage, orchestration, backup/recovery, observability                            | Planned |
+| Area                                                                                                                                                    | Status                                                            |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| [Regulatory landscape](documentation/compliance/regulatory-landscape.md) — HHS/OCR, ASTP/ONC, CMS, SAMHSA, NIST; the laws and rules that apply          | ![Drafted](https://img.shields.io/badge/status-drafted-blue)      |
+| [HIPAA](documentation/compliance/hipaa.md) — Privacy, Security, Breach Notification, Enforcement; safeguards mapped to this codebase                    | ![Drafted](https://img.shields.io/badge/status-drafted-blue)      |
+| [PHI handling & de-identification](documentation/compliance/phi-handling.md) — minimum necessary, Safe Harbor, Expert Determination, 42 CFR Part 2      | ![Drafted](https://img.shields.io/badge/status-drafted-blue)      |
+| [Data retention](documentation/compliance/data-retention.md) — HIPAA documentation retention, CMS Conditions of Participation, state medical-record law | ![Drafted](https://img.shields.io/badge/status-drafted-blue)      |
+| [Interoperability](documentation/architecture/interoperability.md) — Cures Act, information blocking, ONC certification, USCDI, CMS APIs                | ![Drafted](https://img.shields.io/badge/status-drafted-blue)      |
+| [Audit logging](documentation/security/audit-logging.md) — § 164.312(b), ONC audit criteria, ASTM E2147, tamper-evidence                                | ![Drafted](https://img.shields.io/badge/status-drafted-blue)      |
+| [Authentication & authorization](documentation/security/authentication-authorization.md) — SMART on FHIR, OAuth 2.0, RBAC/ABAC                          | ![Drafted](https://img.shields.io/badge/status-drafted-blue)      |
+| [Secrets & encryption](documentation/security/secrets-encryption.md) — encryption at rest / in transit, key management                                  | ![Drafted](https://img.shields.io/badge/status-drafted-blue)      |
+| Tenant isolation, security architecture, data architecture, OMOP CDM, lineage, orchestration, backup/recovery, observability                            | ![Planned](https://img.shields.io/badge/status-planned-lightgrey) |
 
 ---
 
-## 🧰 Tech stack
+## 🧰 Tech Stack
 
 - 🟦 **Language / runtime:** TypeScript (nodenext, ES2023), Node.js ≥ 22
 - 🗂️ **Monorepo:** npm workspaces + a single `tsconfig.base.json` — see the package
@@ -117,15 +127,12 @@ citation convention.
 
 ---
 
-## 🚀 Getting started
+## 🚀 Getting Started
 
-```bash
-# install workspaces and build the shared packages
-npm install
-
-# run the API service (builds packages first, then starts it with reload)
-npm run dev:api
-```
+> [!WARNING]
+> **HealthStack is under active development and is not currently ready for installation or deployment.**
+>
+> I'm still working through the architecture, implementation patterns, and overall project structure. Things may change substantially as I experiment and refine the platform. I don't recommend trying to build or deploy HealthStack yet.
 
 The API listens on `PORT` (default `4000`) and exposes `GET /health`.
 Configuration is validated at startup — see
