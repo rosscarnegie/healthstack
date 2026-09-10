@@ -1,0 +1,32 @@
+{
+  "name": "@healthstack/audit",
+  "version": "0.1.0",
+  "description": "Production-grade, tamper-evident audit logging for HealthStack (HIPAA audit controls, FHIR AuditEvent / IHE ATNA shaped).",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsc -p tsconfig.json --watch --preserveWatchOutput",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@healthstack/logger": "^0.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.5.0",
+    "typescript": "^7.0.2"
+  }
+}
